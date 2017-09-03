@@ -1,14 +1,12 @@
 import React from "react"
-import {observer} from 'mobx-react'
 
-
-@observer
 export default class Right extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       todoInput: ''
     }
+    this.handleClick = this.handleClick.bind(this)
   }
   render() {
     return (
@@ -16,9 +14,13 @@ export default class Right extends React.Component {
         <h1>Right</h1>
         <div className="mobx-demo__right-controls">
           <input type="text" value={this.state.todoInput} onChange={(e)=>this.setState({todoInput: e.target.value})}/>
-          <button>Add</button>
+          <button onClick={this.handleClick}>Add</button>
         </div>
       </div>
     )
+  }
+
+  handleClick() {
+
   }
 }
