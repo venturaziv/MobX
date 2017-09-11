@@ -5,4 +5,4 @@ import TodoStore from './TodoStore'
 
 const app = document.getElementById("app")
 
-ReactDOM.render(<TodoList/>, app)
+ReactDOM.render(<TodoList store={TodoStore}/>, app)
